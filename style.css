@@ -16,6 +16,11 @@ li {
   text-align: center;
   padding: 0.5em;
 }
+.current {
+  border-bottom-width: 0.4em;
+  border-bottom-color: oklch(80% 3% 200);
+  padding-bottom: 0.3em;
+}
 a {
   flex: 1;
 }
