@@ -11,6 +11,10 @@ ul {
 }
 li {
   display: contents;
+  text-decoration: none;
+  color: inherit;
+  text-align: center;
+  padding: 0.5em;
 }
 a {
   flex: 1;
@@ -21,10 +25,4 @@ nav {
   border-bottom-width: 1px;
   border-bottom-style: solid;
   border-bottom-color: oklch(80% 3% 200);
-}
-link {
-  text-decoration: none;
-  color: inherit;
-  text-align: center;
-  padding: 0.5em;
 }
