@@ -7,14 +7,24 @@ body {
     margin-inline: max(1em, (100% - 100ch) / 2);
    }
 ul {
-  display: contents
+  display: contents;
 }
 li {
-  display: contents
+  display: contents;
 }
 a {
-  flex: 1
+  flex: 1;
 }
 nav {
-  display: flex
+  display: flex;
+  margin-bottom: 100ch;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: oklch(80% 3% 200);
+}
+link {
+  text-decoration: none;
+  color: inherit;
+  text-align: center;
+  padding: 0.5em;
 }
