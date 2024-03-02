@@ -6,13 +6,13 @@ body {
      margin-inline: max(1em, (100% - 100ch) / 2);
    }
 ul {
-  display: contents
+  display: contents;
 }
 li {
-  display: contents
+  display: contents;
 }
 nav {
-  display:flex
+  display: flex;
 }
 nav a {
   flex: 1;
