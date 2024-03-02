@@ -1,0 +1,72 @@
+body {
+    /* Set line height to 1.5 times the font size
+       and use the OS’s UI font as the website font
+     */
+     max-width: 100ch;
+     margin-inline: max(1em, (100% - 100ch) / 2);
+     margin-bottom: 1em;
+   }
+ul {
+  display: contents;
+}
+li {
+  display: contents;
+}
+nav {
+  display: flex;
+  border-bottom: 1px solid oklch(80% 3% 200); 
+
+}
+nav a {
+  flex: 1;
+  text-decoration: none;
+  color: inherit;
+  text-align: center;
+  padding: 0.5em;
+}
+
+ nav a.current{
+  border-bottom: 0.4em solid oklch(80% 3% 200);
+  padding-bottom: 0.4em;
+ }
+
+ :root {
+  --color-accent: oklch(65% 50% 0);
+}
+
+html {
+  accent-color: var(--color-accent);
+}
+
+nav a:hover{
+  border-bottom-color: var(--color-accent); /* Uses the accent color on hover/focus */
+  background-color: oklch(from var(--color-accent) 95% 5% h);
+}
+
+img {
+  max-width: 100%; /* Prevents images from stretching beyond their container's width */
+  height: auto; /* Maintains the aspect ratio of the image */
+}
+
+.projects {
+    display: grid; /* This makes .projects a grid container */
+    grid-template-columns: repeat(auto-fill, minmax(15em, 1fr)); /* Defines the flexible grid columns */
+    gap: 1em; /* Optional: Adds some space between the grid items */
+}
+
+.articles-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Example setup, adjust as needed */
+    grid-auto-rows: auto; /* Adjust row height automatically based on content */
+    gap: 1em; /* Spacing between grid items */
+  }
+  
+  article {
+    display: grid;
+    grid-template-rows: subgrid; /* Use the container's grid row setup */
+    grid-row: span 3; /* Each article spans 3 rows */
+  }
+  
+  article h2 {
+    margin: 0; /* Removes default margin to control spacing */
+  }
