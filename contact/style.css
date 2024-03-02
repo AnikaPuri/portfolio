@@ -48,6 +48,13 @@ input, textarea, button {
 }
 
 form{
-    display: grid
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1em;
 }
 
+label {
+    display: grid;
+    grid-template-columns: subgrid; /* Makes the label's grid align with the form's grid */
+    grid-column: 1 / -1; /* Span the label across the entire row */
+  }
