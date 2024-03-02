@@ -5,6 +5,7 @@ body {
      max-width: 100ch;
      margin-inline: max(1em, (100% - 100ch) / 2);
      margin-bottom: 1em;
+     background-color: #ffb6c1;
    }
 ul {
   display: contents;
