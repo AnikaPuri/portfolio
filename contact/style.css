@@ -58,3 +58,8 @@ label {
     grid-template-columns: subgrid; /* Makes the label's grid align with the form's grid */
     grid-column: 1 / -1; /* Span the label across the entire row */
   }
+
+  img {
+    max-width: 100%; /* Prevents images from stretching beyond their container's width */
+    height: auto; /* Maintains the aspect ratio of the image */
+  }

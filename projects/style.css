@@ -54,19 +54,17 @@ img {
     gap: 1em; /* Optional: Adds some space between the grid items */
 }
 
-.articles-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Example setup, adjust as needed */
-    grid-auto-rows: auto; /* Adjust row height automatically based on content */
-    gap: 1em; /* Spacing between grid items */
-  }
   
-  article {
+article {
     display: grid;
     grid-template-rows: subgrid; /* Use the container's grid row setup */
     grid-row: span 3; /* Each article spans 3 rows */
-  }
+}
   
-  article h2 {
+h2 {
     margin: 0; /* Removes default margin to control spacing */
-  }
+}
+
+h1 {
+    font-size: 400%;
+}
