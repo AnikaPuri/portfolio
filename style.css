@@ -11,4 +11,9 @@ ul {
 li {
   display: contents
 }
-
+nav{
+  display:flex
+}
+.flex-container a {
+  flex: 1;
+}
