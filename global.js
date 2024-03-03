@@ -30,11 +30,21 @@ let pages = [
 let nav = document.createElement("nav");
 document.body.prepend(nav);
 
+const ARE_WE_HOME = document.documentElement.classList.contains("home");
+
 for (let p of pages) {
 	let url = p.url;
 	let title = p.title;
 
+    if (!ARE_WE_HOME && !url.startsWith("http")) {
+     	url = "../" + url;
+    }
+
+    
+    // url = !ARE_WE_HOME && !url.startsWith("http") ? "../" + url : url;
 	// Create link and add it to nav
     nav.insertAdjacentHTML("beforeend", `<a href="${ url }">${ title }</a>` );
 
 }
+
+
