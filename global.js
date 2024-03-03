@@ -90,4 +90,5 @@ document.addEventListener('DOMContentLoaded', (event) => {
         document.documentElement.style.setProperty("color-scheme", localStorage.colorScheme);
         select.value = localStorage.colorScheme; // Update the <select> element to match the stored preference
     }
+//when the document reloads
 });
