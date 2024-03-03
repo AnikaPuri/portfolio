@@ -37,14 +37,57 @@ for (let p of pages) {
 	let title = p.title;
 
     if (!ARE_WE_HOME && !url.startsWith("http")) {
-     	url = "../" + url;
+      	url = "../" + url;
     }
-
-    
+	
     // url = !ARE_WE_HOME && !url.startsWith("http") ? "../" + url : url;
 	// Create link and add it to nav
-    nav.insertAdjacentHTML("beforeend", `<a href="${ url }">${ title }</a>` );
+    //nav.insertAdjacentHTML("beforeend", `<a href="${ url }">${ title }</a>` );
 
+	let a = document.createElement("a");
+	a.href = url;
+	a.textContent = title;
+
+	if (a.host === location.host && a.pathname === location.pathname) {
+		a.classList.add("current");
+	}
+
+	if (a.host !== location.host) {
+		a.target = "_blank";
+	}
+
+	nav.append(a);
 }
 
+document.body.insertAdjacentHTML("afterbegin", `
+	<label class="color-scheme">
+		Theme:
+		<select>
+		<option value= "light dark" >Automatic</option>
+		<option value="light" >Light</option>
+		<option value="dark">Dark</option>
+		</select>
+	</label>`
+);
 
+
+const select = document.querySelector('.color-scheme select');
+
+select.addEventListener("input", function (event) {
+	console.log("color scheme changed to", event.target.value);
+
+	document.documentElement.style.setProperty("color-scheme", event.target.value);
+
+	localStorage.colorScheme = event.target.value
+});
+
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    const select = document.querySelector('.color-scheme select');
+
+    // Apply the stored color scheme preference
+    if ("colorScheme" in localStorage) {
+        document.documentElement.style.setProperty("color-scheme", localStorage.colorScheme);
+        select.value = localStorage.colorScheme; // Update the <select> element to match the stored preference
+    }
+});

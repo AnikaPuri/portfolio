@@ -5,7 +5,6 @@ body {
      max-width: 100ch;
      margin-inline: max(1em, (100% - 100ch) / 2);
      margin-bottom: 1em;
-     background-color: #ffb6c1;
    }
 ul {
   display: contents;
@@ -16,6 +15,7 @@ li {
 nav {
   display: flex;
   border-bottom: 1px solid oklch(80% 3% 200); 
+  --border-color: oklch(50% 10% 200 / 40%);
 
 }
 nav a {
@@ -33,6 +33,7 @@ nav a {
 
  :root {
   --color-accent: oklch(65% 50% 0);
+  color-scheme: dark;
 }
 
 html {
@@ -40,9 +41,10 @@ html {
 }
 
 nav a:hover{
-  border-bottom-color: var(--color-accent); /* Uses the accent color on hover/focus */
-  background-color: oklch(from var(--color-accent) 95% 5% h);
-}
+    border-bottom-color: var(--border-color);
+    /* border-bottom-color: var(--color-accent); Uses the accent color on hover/focus */
+    background-color: color-mix(in oklch, var(--color-accent), canvas 85%);
+  }
 
 img {
   max-width: 100%; /* Prevents images from stretching beyond their container's width */
@@ -54,3 +56,10 @@ img {
     grid-template-columns: repeat(auto-fill, minmax(15em, 1fr)); /* Defines the flexible grid columns */
     gap: 1em; /* Optional: Adds some space between the grid items */
 }
+
+.color-scheme {
+    position: absolute; /* Take the switcher out of the normal document flow */
+    top: 1rem; /* Distance from the top edge of the document */
+    right: 1rem; /* Distance from the right edge of the document */
+    font-size: 80%; /* Make the font a bit smaller */
+  }
