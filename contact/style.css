@@ -36,11 +36,6 @@ nav a {
   color-scheme: dark;
 }
 
-html {
-  accent-color: var(--color-accent);
-  color-scheme: light dark;
-}
-
 nav a:hover{
     border-bottom-color: var(--border-color);
     /* border-bottom-color: var(--color-accent); Uses the accent color on hover/focus */
