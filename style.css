@@ -43,13 +43,13 @@ nav a:hover{
 }
 
 img {
-  max-width: 100%; /* Prevents images from stretching beyond their container's width */
+  max-width: 100%; 
   height: auto; /* Maintains the aspect ratio of the image */
 }
 
 .color-scheme {
-  position: absolute; /* Take the switcher out of the normal document flow */
+  position: absolute; 
   top: 1rem; /* Distance from the top edge of the document */
   right: 1rem; /* Distance from the right edge of the document */
-  font-size: 80%; /* Make the font a bit smaller */
+  font-size: 80%;
 }
